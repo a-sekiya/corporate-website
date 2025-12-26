@@ -30,6 +30,13 @@
       content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
     <meta name="twitter:image:src" content="URL" />
 
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap"
+      rel="stylesheet" />
+
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -43,75 +50,103 @@
       <header class="l-header l-container">
         <h1 class="l-header-logo">
           <a href="index.html">
-            <picture>
-              <source media="(max-width: 767px)" srcset="img/layout/header/header-logo-sp.svg" />
-              <source media="(min-width: 768px)" srcset="img/layout/header/header-logo-pc.svg" />
-              <img
-                src="img/layout/header/header-logo-pc.svg"
-                width="247"
-                height="74"
-                alt="森下株式会社"
-                decoding="sync" />
-            </picture>
+            <img src="img/layout/header/header-logo.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
           </a>
         </h1>
 
-        <nav class="l-header-nav">
-          <ul class="l-header-list">
-            <li class="l-header-item">
-              <a href="index.html" class="l-header-link">
-                <span class="l-header-item-link-en l-header-item-link-en--home">HOME</span>
-                <span class="l-header-item-link-jp--home">ホーム</span>
-              </a>
-            </li>
-            <li class="l-header-item">
-              <a href="company.html" class="l-header-link">
-                <span class="l-header-item-link-en">COMPANY</span>
-                会社概要
-              </a>
-            </li>
-            <li class="l-header-item">
-              <a href="#" class="l-header-link l-header-item-link--business">
-                <span class="l-header-item-link-en">BUSINESS</span>
-                事業紹介
-              </a>
-              <ul class="l-header-business-detail">
-                <li class="l-header-business-detail-item">
-                  <a href="business/design.html" class="l-header-business-detail-link">特殊ボルトナットの設計・製造</a>
-                </li>
-                <li class="l-header-business-detail-item">
-                  <a href="business/order-made.html" class="l-header-business-detail-link">
-                    特殊ボルトナットのオーダーメイド
+        <button class="l-header-menu-open-button js-header-menu-open-button">
+          <span class="l-header-menu-open-button-line">
+            <span class="l-header-menu-open-button-line-item"></span>
+            <span class="l-header-menu-open-button-line-item"></span>
+            <span class="l-header-menu-open-button-line-item"></span>
+          </span>
+          <span class="u-visually-hidden">メニューを開く</span>
+        </button>
+
+        <dialog class="l-header-menu js-header-menu" aria-label="メニュー">
+          <div class="l-header-menu-inner l-container">
+            <div class="l-header-menu-top">
+              <div class="l-header-logo">
+                <a href="index.html">
+                  <img
+                    src="img/layout/header/header-logo.svg"
+                    width="247"
+                    height="74"
+                    alt="森下株式会社"
+                    decoding="sync" />
+                </a>
+              </div>
+              <button class="l-header-menu-close-button js-header-menu-close-button">
+                <span class="l-header-menu-close-button-line">
+                  <span class="l-header-menu-close-button-line-item"></span>
+                  <span class="l-header-menu-close-button-line-item"></span>
+                  <span class="l-header-menu-close-button-line-item"></span>
+                </span>
+                <span class="u-visually-hidden">メニューを閉じる</span>
+              </button>
+            </div>
+
+            <nav class="l-header-nav">
+              <ul class="l-header-list">
+                <li class="l-header-item">
+                  <a href="index.html" class="l-header-link">
+                    <span class="l-header-item-link-en l-header-item-link-en--home">HOME</span>
+                    <span class="l-header-item-link-jp--home">ホーム</span>
                   </a>
                 </li>
-                <li class="l-header-business-detail-item">
-                  <a href="business/quality-control.html" class="l-header-business-detail-link">
-                    ISO 9001 認証取得の品質管理
+                <li class="l-header-item">
+                  <a href="company.html" class="l-header-link">
+                    <span class="l-header-item-link-en">COMPANY</span>
+                    会社概要
+                  </a>
+                </li>
+                <li class="l-header-item">
+                  <a href="#" class="l-header-link l-header-item-link--business">
+                    <span class="l-header-item-link-en">BUSINESS</span>
+                    事業紹介
+                  </a>
+                  <ul class="l-header-business-detail">
+                    <li class="l-header-business-detail-item">
+                      <a href="business/design.html" class="l-header-business-detail-link">
+                        特殊ボルトナットの設計・製造
+                      </a>
+                    </li>
+                    <li class="l-header-business-detail-item">
+                      <a href="business/order-made.html" class="l-header-business-detail-link">
+                        特殊ボルトナットのオーダーメイド
+                      </a>
+                    </li>
+                    <li class="l-header-business-detail-item">
+                      <a href="business/quality-control.html" class="l-header-business-detail-link">
+                        ISO 9001 認証取得の品質管理
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="l-header-item">
+                  <a href="product.html" class="l-header-link">
+                    <span class="l-header-item-link-en">PRODUCT</span>
+                    製品紹介
+                  </a>
+                </li>
+                <li class="l-header-item">
+                  <a href="access.html" class="l-header-link">
+                    <span class="l-header-item-link-en">ACCESS</span>
+                    アクセス
+                  </a>
+                </li>
+                <li class="l-header-item">
+                  <a href="contact.html" class="l-header-link l-header-item-link--contact">
+                    <span class="l-header-item-link-en">CONTACT</span>
+                    お問い合わせ
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="l-header-item">
-              <a href="product.html" class="l-header-link">
-                <span class="l-header-item-link-en">PRODUCT</span>
-                製品紹介
-              </a>
-            </li>
-            <li class="l-header-item">
-              <a href="access.html" class="l-header-link">
-                <span class="l-header-item-link-en">ACCESS</span>
-                アクセス
-              </a>
-            </li>
-            <li class="l-header-item">
-              <a href="contact.html" class="l-header-link l-header-item-link--contact">
-                <span class="l-header-item-link-en">CONTACT</span>
-                お問い合わせ
-              </a>
-            </li>
-          </ul>
-        </nav>
+            </nav>
+          </div>
+        </dialog>
       </header>
+
       <main class="l-page-main">
         <!-- top-kv -->
         <div class="top-kv"></div>
