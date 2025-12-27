@@ -5,4 +5,23 @@ component > title
 ------------------------------
 */
 .c-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.c-title-en {
+  font-size: 40px;
+  line-height: normal;
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+}
+
+.c-title-jp {
+  line-height: normal;
+  color: var(--text-light-base);
+
+  @include g.mq() {
+    font-size: 15px;
+  }
 }

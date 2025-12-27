@@ -1,19 +1,22 @@
-@use '../global' as g;
+@use "../global" as g;
 
 /*!
 layout > header
 ------------------------------
 */
 .l-header {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
   z-index: var(--z-index-header);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 32px;
+  margin-top: 32px;
 
   @include g.mq($breakpoint: lg) {
-    padding-top: 48px;
+    margin-top: 48px;
   }
 }
 
@@ -136,9 +139,6 @@ layout > header
   }
 }
 
-.l-header-nav {
-}
-
 .l-header-list {
   width: 87%;
 
@@ -241,9 +241,9 @@ layout > header
 
   &::after {
     @include g.mq($breakpoint: lg) {
-      content: '';
+      content: "";
       display: block;
-      background-image: url('../img/layout/header/header-business-arrow.svg');
+      background-image: url("../img/layout/header/header-business-arrow.svg");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -315,6 +315,7 @@ layout > header
 
     @media (any-hover: hover) {
       &:hover {
+        opacity: 0.8;
         &::after {
           transform: translateX(4px);
         }
@@ -323,11 +324,11 @@ layout > header
   }
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 9px;
     height: 9px;
-    background-image: url('../img/layout/header/header-business-detail-arrow.svg');
+    background-image: url("../img/layout/header/header-business-detail-arrow.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

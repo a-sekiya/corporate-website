@@ -5,10 +5,8 @@ page > top > top-kv
 ------------------------------
 */
 .top-kv {
-  position: absolute;
-  inset: 0;
+  position: relative;
   height: 680px;
-  width: 100%;
   overflow: hidden;
 
   @include g.mq() {
