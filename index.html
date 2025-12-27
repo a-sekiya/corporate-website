@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>森下株式会社 | 特殊ボルトナット制作のプロフェッショナル</title>
-    <meta
-      name="description"
-      content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
+    <meta name="description" content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
     <meta name="format-detection" content="telephone=no" />
 
     <!-- favicon/webclipicon -->
@@ -19,28 +17,24 @@
     <meta property="og:url" content="URL" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="森下株式会社 | 特殊ボルトナット制作のプロフェッショナル" />
-    <meta
-      property="og:description"
-      content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
+    <meta property="og:description" content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
     <meta property="og:image" content="URL" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:description"
-      content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
+    <meta name="twitter:description" content="森下株式会社は特殊ボルトナットの設計・製造を専門とするプロフェッショナル企業です。高品質な製品と確かな技術で、お客様の多様なニーズにお応えします。" />
     <meta name="twitter:image:src" content="URL" />
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
 
     <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
     <script src="js/main.js" defer></script>
 
     <meta name="robots" content="noindex,nofollow" />
@@ -68,12 +62,7 @@
             <div class="l-header-menu-top">
               <div class="l-header-logo">
                 <a href="index.html">
-                  <img
-                    src="img/layout/header/header-logo.svg"
-                    width="247"
-                    height="74"
-                    alt="森下株式会社"
-                    decoding="sync" />
+                  <img src="img/layout/header/header-logo.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
                 </a>
               </div>
               <button class="l-header-menu-close-button js-header-menu-close-button">
@@ -107,19 +96,13 @@
                   </a>
                   <ul class="l-header-business-detail">
                     <li class="l-header-business-detail-item">
-                      <a href="business/design.html" class="l-header-business-detail-link">
-                        特殊ボルトナットの設計・製造
-                      </a>
+                      <a href="business/design.html" class="l-header-business-detail-link"> 特殊ボルトナットの設計・製造 </a>
                     </li>
                     <li class="l-header-business-detail-item">
-                      <a href="business/order-made.html" class="l-header-business-detail-link">
-                        特殊ボルトナットのオーダーメイド
-                      </a>
+                      <a href="business/order-made.html" class="l-header-business-detail-link"> 特殊ボルトナットのオーダーメイド </a>
                     </li>
                     <li class="l-header-business-detail-item">
-                      <a href="business/quality-control.html" class="l-header-business-detail-link">
-                        ISO 9001 認証取得の品質管理
-                      </a>
+                      <a href="business/quality-control.html" class="l-header-business-detail-link"> ISO 9001 認証取得の品質管理 </a>
                     </li>
                   </ul>
                 </li>
@@ -149,7 +132,36 @@
 
       <main class="l-page-main">
         <!-- top-kv -->
-        <div class="top-kv"></div>
+        <div class="top-kv">
+          <div class="splide js-top-kv-splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <picture>
+                    <source media="(max-width: 768px)" srcset="../img/top/kv/kv-image-sp.jpg" />
+                    <source media="(min-width: 768px)" srcset="../img/top/kv/kv-image-pc.jpg" />
+                    <img src="../img/top/kv/kv-image-pc.jpg" width="2880" height="800" alt="特殊ボルト・ナットを用いて修理をする熟練職人の手元" decoding="sync" />
+                  </picture>
+                </li>
+                <li class="splide__slide">
+                  <img src="../img/top/kv/kv-image02.jpg" width="1764" height="800" alt="多種多様な形状の特殊ボルト・ナット製品" decoding="sync" />
+                </li>
+                <li class="splide__slide">
+                  <img src="../img/top/kv/kv-image03.jpg" width="1764" height="800" alt="特殊ボルト・ナットを取り出す熟練職人の手元" decoding="sync" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="top-kv-content l-container">
+            <div class="top-kv-title">
+              <h2 class="top-kv-jp">特殊ボルトナット制作の<span class="u-block">プロフェッショナル</span></h2>
+              <span class="top-kv-en">Special bolt and nut production <span class="u-sp-block">professionals</span></span>
+            </div>
+            <div class="top-kv-circle">
+              <span class="top-kv-circle-num">01</span>
+            </div>
+          </div>
+        </div>
         <!-- end top-kv -->
       </main>
     </div>
