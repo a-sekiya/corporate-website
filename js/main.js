@@ -29,22 +29,69 @@ const initializeHeaderDropdown = () => {
     const item = document.querySelector(".js-header-business-detail");
     const link = document.querySelector(".js-header-item-link");
 
-    // コンソールで取得できているか確認（デバッグ用）
-    console.log("Target item:", item);
-    console.log("Target link:", link);
-
     if (!item || !link) return;
+
+    let isAnimating = false;
+
+    const contentsOpeningKeyframes = {
+      opacity: [0, 1],
+    };
+
+    const contentsClosingKeyframes = {
+      opacity: [1, 0],
+    };
+
+    const options = {
+      duration: 300,
+      easing: "ease-out",
+    };
+
+    const closeDropdown = () => {
+      if (isAnimating || !item.classList.contains("is-open")) return;
+
+      isAnimating = true;
+      const anim = item.animate(contentsClosingKeyframes, options);
+
+      anim.onfinish = () => {
+        item.classList.remove("is-open");
+        isAnimating = false;
+      };
+    };
+
+    const openDropdown = () => {
+      if (isAnimating || item.classList.contains("is-open")) return;
+
+      isAnimating = true;
+      item.classList.add("is-open");
+      const anim = item.animate(contentsOpeningKeyframes, options);
+
+      anim.onfinish = () => {
+        isAnimating = false;
+      };
+    };
 
     link.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      item.classList.toggle("is-open");
-      console.log("is-open toggled:", item.classList.contains("is-open"));
+
+      if (!item.classList.contains("is-open")) {
+        openDropdown();
+      } else {
+        closeDropdown();
+      }
     });
 
+    // 外側クリックで非表示
     document.addEventListener("click", (e) => {
       if (!item.contains(e.target) && e.target !== link) {
-        item.classList.remove("is-open");
+        closeDropdown();
+      }
+    });
+
+    // Escapeキーを押すと非表示
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeDropdown();
       }
     });
   });
@@ -150,31 +197,199 @@ const initializeContactBgSlider = () => {
 initializeContactBgSlider();
 
 /**
+ * footer：ページトップへ戻る
+ */
+const scrollToTop = () => {
+  const btn = document.querySelector(".js-footer-button");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+};
+scrollToTop();
+
+/**
  * トップページKVスライド
  */
 const initializeTopMainVisual = () => {
-  document.addEventListener("DOMContentLoaded", function () {
-    const el = document.querySelector(".js-top-kv-splide");
+  const el = document.querySelector(".js-top-kv-splide");
+  if (!el) return;
 
-    if (!el) return;
-
-    if (el) {
-      const splide = new Splide(el, {
-        type: "fade", // 左右に流さず、その場で切り替える
-        rewind: true, // 最後まで行ったら最初に戻る
-        speed: 3000, // 切り替わりの時間（3秒かけてじわ〜っと）
-        interval: 5000, // 次のスライドまでの待ち時間（5秒）
-        autoplay: true, // 自動再生
-        pauseOnHover: false, // マウスを乗せても止めない
-        arrows: false, // 左右の矢印を消す
-        pagination: false, // 下のドットを消す
-      });
-
-      splide.mount();
-    }
+  const splide = new Splide(el, {
+    type: "fade",
+    rewind: true,
+    speed: 2000,
+    interval: 10000,
+    autoplay: true,
+    pauseOnHover: false,
+    arrows: false,
+    pagination: false,
   });
+
+  // スライド番号の連動アニメーション ---
+  const numberEl = document.querySelector(".js-top-kv-circle-num");
+  if (!numberEl) return;
+
+  if (numberEl) {
+    const animOptions = {
+      duration: 400,
+      easing: "ease-out",
+    };
+
+    splide.on("move", (newIndex) => {
+      // 1. まず今の数字をふわっと消す
+      const fadeOut = numberEl.animate({ opacity: [1, 0], transform: ["translateY(0)", "translateY(-5px)"] }, animOptions);
+
+      fadeOut.onfinish = () => {
+        // 2. 消えきったら数字を書き換える（01, 02...の形式に）
+        const nextNum = (newIndex + 1).toString().padStart(2, "0");
+        numberEl.textContent = nextNum;
+
+        // 3. 新しい数字をふわっと出す
+        numberEl.animate({ opacity: [0, 1], transform: ["translateY(5px)", "translateY(0)"] }, animOptions);
+      };
+    });
+  }
+
+  splide.mount();
 };
 initializeTopMainVisual();
+
+/**
+ * トップページ KVテキストのアニメーション
+ */
+const initializeAnimateKV = () => {
+  const title = ".js-top-kv-jp";
+  const subtitle = ".js-top-kv-en";
+
+  if (!title || !subtitle) return;
+
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      const { isMobile } = context.conditions;
+      const tl = gsap.timeline();
+
+      tl.from(title, {
+        y: isMobile ? 15 : 30,
+        opacity: 0,
+        duration: 2.0,
+        ease: "power2.out",
+        delay: 0.5,
+      }).from(
+        subtitle,
+        {
+          y: 10,
+          opacity: 0,
+          duration: 1.5,
+          ease: "power2.out",
+        },
+        "-=1.2"
+      );
+    }
+  );
+};
+initializeAnimateKV();
+
+/**
+ * トップページ Newsアニメーション
+ */
+const initializeAnimateNews = () => {
+  const item = document.querySelectorAll(".js-top-news-item");
+  const list = document.querySelector(".js-top-news-list");
+
+  if (!item || !list) return;
+
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      // メディアクエリの設定
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      const { isMobile } = context.conditions;
+
+      gsap.from(item, {
+        // SPのときは10、PCのときは40
+        y: isMobile ? 10 : 40,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: list,
+          // 発火タイミングもSPは少し遅め（画面の下の方）にすると自然です
+          start: isMobile ? "top 90%" : "top 85%",
+        },
+      });
+    }
+  );
+};
+
+initializeAnimateNews();
+/**
+ * トップページ Businessアニメーション
+ */
+const initializeAnimateBusiness = () => {
+  const box = document.querySelector(".js-top-business-inner");
+  const image = document.querySelector(".js-top-business-image");
+  const content = document.querySelector(".js-top-business-content");
+
+  if (!box || !image || !content) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      let { isMobile } = context.conditions;
+
+      // 画像のアニメーション
+      gsap.from(image, {
+        x: isMobile ? 0 : -60,
+        y: isMobile ? 20 : 0,
+        opacity: 0,
+        duration: 2.0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: box,
+          start: isMobile ? "top 95%" : "top 85%",
+        },
+      });
+
+      // テキストのアニメーション
+      gsap.from(content, {
+        x: isMobile ? 0 : 60,
+        y: isMobile ? 20 : 0,
+        opacity: 0,
+        duration: 2.0,
+        delay: isMobile ? 0.3 : 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: box,
+          start: isMobile ? "top 95%" : "top 85%",
+        },
+      });
+    }
+  );
+};
+initializeAnimateBusiness();
 
 /**
  * トップページ PRODUCTスライド
@@ -196,7 +411,7 @@ const initializeTopProductSlider = () => {
 
       autoScroll: {
         speed: 0.5, // スクロール速度（数値が大きいほど速い）
-        pauseOnHover: true, // マウスホバー時に一時停止するか
+        pauseOnHover: false, // マウスホバー時に一時停止するか
         pauseOnFocus: false, // フォーカス時に一時停止するか
       },
 
@@ -210,6 +425,72 @@ const initializeTopProductSlider = () => {
     });
 
     splide.mount(window.splide.Extensions);
+
+    // 矢印ボタンを除外して、画像エリアだけホバーで止める設定 ---
+    const track = el.querySelector(".splide__track");
+    const autoScroll = splide.Components.AutoScroll;
+
+    if (track && autoScroll) {
+      // 画像エリア（track）にマウスが乗ったら停止
+      track.addEventListener("mouseenter", () => {
+        autoScroll.pause();
+      });
+
+      // 画像エリア（track）からマウスが外れたら再開
+      track.addEventListener("mouseleave", () => {
+        autoScroll.play();
+      });
+    }
   });
 };
 initializeTopProductSlider();
+
+/**
+ * トップページ 会社概要・代表挨拶・アクセスのアニメーション
+ */
+const initializeAnimateOthers = () => {
+  const item = document.querySelectorAll(".js-top-others-item");
+  const list = document.querySelector(".js-top-others-list");
+
+  if (!item || !list) return;
+
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      let { isMobile } = context.conditions;
+
+      if (isMobile) {
+        gsap.utils.toArray(item).forEach((item) => {
+          gsap.from(item, {
+            y: 20,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+            },
+          });
+        });
+      } else {
+        gsap.from(item, {
+          y: 50,
+          opacity: 0,
+          duration: 1.5,
+          stagger: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: list,
+            start: "top 85%",
+          },
+        });
+      }
+    }
+  );
+};
+initializeAnimateOthers();

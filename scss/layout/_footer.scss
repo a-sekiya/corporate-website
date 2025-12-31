@@ -4,6 +4,161 @@
 layout > footer
 ------------------------------
 */
-.footer {
-  color: #000;
+.l-footer {
+  background-color: var(--bg-darkblue);
+  padding: 80rem 0;
+  border-radius: 30rem 30rem 0 0;
+  position: relative;
+
+  @include g.mq() {
+    border-radius: 56rem 56rem 0 0;
+  }
+}
+
+.l-footer-button {
+  position: absolute;
+  top: 25rem;
+  left: 50%;
+  translate: -50% -50%;
+  width: 80rem;
+  height: 80rem;
+  border-radius: 50%;
+  transition: translate 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      translate: -50% -60%; // -65%だと少し浮きすぎるかもしれないので微調整
+    }
+  }
+}
+
+.l-footer-inner {
+  color: var(--text-white);
+  display: flex;
+  justify-content: center;
+
+  @include g.mq() {
+    justify-content: space-between;
+    gap: 50rem;
+  }
+}
+
+.l-footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 56rem;
+  text-align: center;
+
+  @include g.mq() {
+    gap: 121rem;
+    text-align-last: left;
+  }
+}
+
+.l-footer-info {
+}
+
+.l-container {
+}
+
+.l-footer-logo {
+  width: 160rem;
+  height: 48rem;
+  margin-inline: auto;
+
+  @include g.mq() {
+    width: 247rem;
+    height: 74rem;
+  }
+}
+
+.l-footer-address {
+  margin-top: 32rem;
+  font-size: 13rem;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.l-footer-tel {
+  display: inline-block;
+  margin-top: 8rem;
+  font-size: 13rem;
+  line-height: normal;
+  vertical-align: bottom;
+}
+
+.l-footer-tel-link {
+  font-family: var(--font-family-en);
+  font-size: 21rem;
+  line-height: normal;
+  margin-left: 8rem;
+  transition: 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.l-footer-copyright {
+  font-family: var(--font-family-en);
+  font-size: 13rem;
+  line-height: normal;
+}
+
+.l-footer-nav {
+  display: none;
+
+  @include g.mq() {
+    display: flex;
+    gap: 96rem;
+    font-size: 15rem;
+    line-height: normal;
+  }
+}
+
+.l-footer-list {
+  @include g.mq() {
+    display: flex;
+    flex-direction: column;
+    gap: 16rem;
+  }
+}
+
+.l-footer-item {
+  transition: 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.l-footer-item--home {
+  @include g.mq() {
+    margin-bottom: 24rem;
+  }
+}
+
+.l-footer-list02 {
+}
+
+.l-footer-business-detail {
+  @include g.mq() {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+    font-size: 13rem;
+    margin-block: 16rem 40rem;
+  }
+}
+
+.l-footer-list03 {
+  @include g.mq() {
+    display: flex;
+    flex-direction: column;
+    gap: 24rem;
+  }
 }

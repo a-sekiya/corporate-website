@@ -85,6 +85,7 @@ layout > header
   height: 100dvh;
   background: var(--bg-primary);
   padding-block: 32rem 72rem;
+  margin: 0;
 
   @include g.mq() {
     display: contents;

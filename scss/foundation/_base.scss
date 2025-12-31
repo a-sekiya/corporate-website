@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   line-height: 1.9;
   font-size: 15rem;
   color: var(--text-base);
