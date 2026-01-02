@@ -3,5 +3,21 @@ global > color
 ------------------------------
 */
 :root {
-    --color-font-base: #333;
+  --bg-primary: #1e4aa4;
+  --bg-light-grey: #eaecef;
+  --bg-lightest-blue: #f5f8fb;
+  --bg-darkblue: #222a38;
+  --bg-white: #ffffff;
+  --bg-white-transparent: rgba(255, 255, 255, 0.2);
+  --text-base: #49515f;
+  --text-primary: #1e4aa4;
+  --text-white: #ffffff;
+  --text-light-base: #9a9eac;
+  --other-logo: #06235e;
+  --other-logo: #e5ebf0;
+  --other-link: #497fdf;
+  --sep-lightgrey: #eeeeee;
+  --border-white-20: rgb(255 255 255 / 0.2);
+  --bg-contact: linear-gradient(180deg, #0772d1 0%, #254da0 100%);
+  --bg-contact-hover: linear-gradient(180deg, #254da0 0%, #0772d1 100%);
 }

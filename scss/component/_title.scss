@@ -5,4 +5,56 @@ component > title
 ------------------------------
 */
 .c-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.c-title--row {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.c-title--contact {
+  gap: 8rem;
+
+  @include g.mq() {
+    gap: 18rem;
+  }
+}
+
+.c-title-en {
+  font-size: 40rem;
+  line-height: normal;
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+}
+
+.c-title-en--small {
+  font-size: 20rem;
+}
+
+.c-title-en--white {
+  color: var(--text-white);
+}
+
+.c-title-en--contact {
+  font-size: 32rem;
+
+  @include g.mq() {
+    font-size: 40rem;
+  }
+}
+
+.c-title-jp {
+  line-height: normal;
+  color: var(--text-light-base);
+
+  @include g.mq() {
+    font-size: 15rem;
+  }
+}
+
+.c-title-jp--white {
+  color: var(--text-white);
 }

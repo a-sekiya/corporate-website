@@ -1,4 +1,5 @@
-@use "top/top-common";
 @use "top/top-kv";
-@use "about/about-common";
-@use "about/about-kv";
+@use "top/top-news";
+@use "top/top-business";
+@use "top/top-product";
+@use "top/top-others";
