@@ -282,15 +282,15 @@ const initializeAnimateKV = () => {
       tl.from(title, {
         y: isMobile ? 15 : 30,
         opacity: 0,
-        duration: 2.0,
+        duration: 1.5,
         ease: "power2.out",
-        delay: 0.5,
+        delay: 0.2,
       }).from(
         subtitle,
         {
           y: 10,
           opacity: 0,
-          duration: 1.5,
+          duration: 1.0,
           ease: "power2.out",
         },
         "-=1.2"
@@ -324,7 +324,7 @@ const initializeAnimateNews = () => {
         // SPのときは10、PCのときは40
         y: isMobile ? 10 : 40,
         opacity: 0,
-        duration: 1.5,
+        duration: 1.2,
         stagger: 0.3,
         ease: "power2.out",
         scrollTrigger: {
@@ -336,8 +336,8 @@ const initializeAnimateNews = () => {
     }
   );
 };
-
 initializeAnimateNews();
+
 /**
  * トップページ Businessアニメーション
  */
@@ -481,8 +481,8 @@ const initializeAnimateOthers = () => {
         gsap.from(item, {
           y: 50,
           opacity: 0,
-          duration: 1.5,
-          stagger: 0.5,
+          duration: 1.2,
+          stagger: 0.3,
           ease: "power2.out",
           scrollTrigger: {
             trigger: list,
@@ -494,3 +494,26 @@ const initializeAnimateOthers = () => {
   );
 };
 initializeAnimateOthers();
+
+/**
+ * 下層ページ（会社概要）のタイトル出現アニメーション
+ */
+const initializeCompanyAnimation = () => {
+  const en = document.querySelectorAll(".js-page-title-en");
+  const jp = document.querySelector(".js-page-title-jp");
+
+  if (!en || !jp) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline();
+  tl.from([en, jp], {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    stagger: 0.2,
+  });
+};
+
+initializeCompanyAnimation();

@@ -10,12 +10,6 @@ component > title
   gap: 8rem;
 }
 
-.c-title--pc-wide {
-  @include g.mq() {
-    gap: 16rem;
-  }
-}
-
 .c-title--row {
   flex-direction: row;
   align-items: baseline;
@@ -34,14 +28,6 @@ component > title
   line-height: normal;
   font-family: var(--font-family-en);
   color: var(--text-primary);
-}
-
-.c-title-en--big {
-  font-size: 50rem;
-
-  @include g.mq() {
-    font-size: 72rem;
-  }
 }
 
 .c-title-en--small {
@@ -69,16 +55,36 @@ component > title
   }
 }
 
-.c-title-jp--pc-big {
+.c-title-jp--white {
+  color: var(--text-white);
+}
+
+.c-page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
   @include g.mq() {
-    font-size: 18rem;
+    gap: 16rem;
   }
 }
 
-.c-title-jp--black {
-  color: var(--text-base);
+.c-page-title-en {
+  font-size: 50rem;
+  line-height: normal;
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+
+  @include g.mq() {
+    font-size: 72rem;
+  }
 }
 
-.c-title-jp--white {
-  color: var(--text-white);
+.c-page-title-jp {
+  line-height: normal;
+  color: var(--text-base);
+
+  @include g.mq() {
+    font-size: 18rem;
+  }
 }

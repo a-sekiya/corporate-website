@@ -311,12 +311,6 @@ component > title
   gap: 8rem;
 }
 
-@media screen and (min-width: 768px) {
-  .c-title--pc-wide {
-    gap: 16rem;
-  }
-}
-
 .c-title--row {
   flex-direction: row;
   align-items: baseline;
@@ -336,15 +330,6 @@ component > title
   line-height: normal;
   font-family: var(--font-family-en);
   color: var(--text-primary);
-}
-
-.c-title-en--big {
-  font-size: 50rem;
-}
-@media screen and (min-width: 768px) {
-  .c-title-en--big {
-    font-size: 72rem;
-  }
 }
 
 .c-title-en--small {
@@ -374,18 +359,41 @@ component > title
   }
 }
 
+.c-title-jp--white {
+  color: var(--text-white);
+}
+
+.c-page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
 @media screen and (min-width: 768px) {
-  .c-title-jp--pc-big {
-    font-size: 18rem;
+  .c-page-title {
+    gap: 16rem;
   }
 }
 
-.c-title-jp--black {
-  color: var(--text-base);
+.c-page-title-en {
+  font-size: 50rem;
+  line-height: normal;
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+}
+@media screen and (min-width: 768px) {
+  .c-page-title-en {
+    font-size: 72rem;
+  }
 }
 
-.c-title-jp--white {
-  color: var(--text-white);
+.c-page-title-jp {
+  line-height: normal;
+  color: var(--text-base);
+}
+@media screen and (min-width: 768px) {
+  .c-page-title-jp {
+    font-size: 18rem;
+  }
 }
 
 /*!
@@ -581,7 +589,6 @@ component > table
 }
 @media screen and (min-width: 768px) {
   .c-table-row {
-    display: grid;
     grid-template-columns: 160rem 1fr;
     gap: 0;
     border-top: 0;
@@ -1853,9 +1860,4 @@ page > top > top-others
     transform: translateX(4rem);
   }
 }
-
-/*!
-page > company > company
-------------------------------
-*/
 /*# sourceMappingURL=style.css.map */

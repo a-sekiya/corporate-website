@@ -1,0 +1,46 @@
+@use "../global" as g;
+
+/*!
+component > breadcrumb
+------------------------------
+*/
+.c-breadcrumb {
+  margin-top: 16rem;
+
+  @include g.mq() {
+    margin-top: 30rem;
+  }
+}
+
+.c-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 16rem;
+}
+
+.c-breadcrumb-item {
+  font-size: 14rem;
+  line-height: normal;
+  letter-spacing: 0.05em;
+}
+
+.c-breadcrumb-item-link {
+  display: flex;
+  align-items: center;
+  gap: 16rem;
+
+  &::after {
+    content: "";
+    display: block;
+    background-image: url("../img/common/button-arrow-blue.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+.c-breadcrumb-item--current {
+  color: var(--text-primary);
+}
