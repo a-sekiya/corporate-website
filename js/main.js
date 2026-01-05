@@ -510,7 +510,7 @@ const initializeCompanyAnimation = () => {
   tl.from([en, jp], {
     y: 20,
     opacity: 0,
-    duration: 0.8,
+    duration: 1.2,
     ease: "power3.out",
     stagger: 0.2,
   });

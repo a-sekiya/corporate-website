@@ -683,11 +683,11 @@ layout > header
   }
 }
 
-.l-header--sub {
+.l-header--page {
   margin-top: 40rem;
 }
 @media screen and (min-width: 768px) {
-  .l-header--sub {
+  .l-header--page {
     margin-top: 45rem;
   }
 }
@@ -807,6 +807,7 @@ layout > header
 }
 
 .l-header-list {
+  color: var(--text-white);
   width: 87%;
 }
 .l-header-list:first-of-type {
@@ -824,8 +825,13 @@ layout > header
   }
 }
 
+@media screen and (min-width: 768px) {
+  .l-header-list--page {
+    color: var(--text-base);
+  }
+}
+
 .l-header-item {
-  color: var(--text-white);
   display: flex;
   flex-direction: column;
   gap: 16rem;
@@ -840,12 +846,6 @@ layout > header
   .l-header-item:hover .l-header-business-detail {
     opacity: 1;
     visibility: visible;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .l-header-item--pc-black {
-    color: var(--text-base);
   }
 }
 
@@ -876,7 +876,7 @@ layout > header
 }
 
 @media screen and (min-width: 768px) {
-  .l-header-link--pc-wide {
+  .l-header-link--page {
     margin-right: 31rem;
   }
 }
@@ -935,6 +935,7 @@ layout > header
 
 @media screen and (min-width: 768px) {
   .l-header-item-link--contact {
+    color: var(--text-white);
     background-color: var(--bg-primary);
     padding: 12rem 32rem;
     width: 160rem;
