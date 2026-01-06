@@ -25,7 +25,7 @@ component > title
 
 .c-title-en {
   font-size: 40rem;
-  line-height: normal;
+  line-height: 1.15;
   font-family: var(--font-family-en);
   color: var(--text-primary);
 }
@@ -47,7 +47,7 @@ component > title
 }
 
 .c-title-jp {
-  line-height: normal;
+  line-height: 1.45;
   color: var(--text-light-base);
 
   @include g.mq() {
@@ -71,7 +71,7 @@ component > title
 
 .c-page-title-en {
   font-size: 50rem;
-  line-height: normal;
+  line-height: 1.15;
   font-family: var(--font-family-en);
   color: var(--text-primary);
 
@@ -81,7 +81,7 @@ component > title
 }
 
 .c-page-title-jp {
-  line-height: normal;
+  line-height: 1.45;
   color: var(--text-base);
 
   @include g.mq() {
@@ -98,7 +98,7 @@ component > title
 
 .c-page-title-row-en {
   font-size: 20rem;
-  line-height: normal;
+  line-height: 1.15;
   font-family: var(--font-family-en);
   color: var(--text-primary);
 
@@ -108,7 +108,7 @@ component > title
 }
 
 .c-page-title-row-jp {
-  line-height: normal;
+  line-height: 1.45;
   color: var(--text-light-base);
 
   @include g.mq() {
@@ -118,7 +118,7 @@ component > title
 
 .c-page-title-sub {
   font-size: 28rem;
-  line-height: normal;
+  line-height: 1.45;
   letter-spacing: 0.05em;
   margin-top: 12rem;
   font-weight: 500;

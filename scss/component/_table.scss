@@ -37,7 +37,7 @@ component > table
 
 .c-table-header {
   font-weight: bold;
-  line-height: normal;
+  line-height: 1.45;
 
   @include g.mq() {
     border-top: 1rem solid var(--bg-table);

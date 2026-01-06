@@ -199,7 +199,7 @@ initializeContactBgSlider();
 /**
  * footer：ページトップへ戻る
  */
-const scrollToTop = () => {
+const initializeScrollToTop = () => {
   const btn = document.querySelector(".js-footer-button");
   if (!btn) return;
 
@@ -210,7 +210,7 @@ const scrollToTop = () => {
     });
   });
 };
-scrollToTop();
+initializeScrollToTop();
 
 /**
  * トップページKVスライド
@@ -262,7 +262,7 @@ initializeTopMainVisual();
 /**
  * トップページ KVテキストのアニメーション
  */
-const initializeAnimateKV = () => {
+const initializeTopAnimateKV = () => {
   const title = ".js-top-kv-jp";
   const subtitle = ".js-top-kv-en";
 
@@ -298,12 +298,12 @@ const initializeAnimateKV = () => {
     }
   );
 };
-initializeAnimateKV();
+initializeTopAnimateKV();
 
 /**
  * トップページ Newsアニメーション
  */
-const initializeAnimateNews = () => {
+const initializeTopAnimateNews = () => {
   const item = document.querySelectorAll(".js-top-news-item");
   const list = document.querySelector(".js-top-news-list");
 
@@ -336,12 +336,12 @@ const initializeAnimateNews = () => {
     }
   );
 };
-initializeAnimateNews();
+initializeTopAnimateNews();
 
 /**
  * トップページ Businessアニメーション
  */
-const initializeAnimateBusiness = () => {
+const initializeTopAnimateBusiness = () => {
   const box = document.querySelector(".js-top-business-inner");
   const image = document.querySelector(".js-top-business-image");
   const content = document.querySelector(".js-top-business-content");
@@ -389,7 +389,7 @@ const initializeAnimateBusiness = () => {
     }
   );
 };
-initializeAnimateBusiness();
+initializeTopAnimateBusiness();
 
 /**
  * トップページ PRODUCTスライド
@@ -448,7 +448,7 @@ initializeTopProductSlider();
 /**
  * トップページ 会社概要・代表挨拶・アクセスのアニメーション
  */
-const initializeAnimateOthers = () => {
+const initializeTopAnimateOthers = () => {
   const item = document.querySelectorAll(".js-top-others-item");
   const list = document.querySelector(".js-top-others-list");
 
@@ -493,12 +493,12 @@ const initializeAnimateOthers = () => {
     }
   );
 };
-initializeAnimateOthers();
+initializeTopAnimateOthers();
 
 /**
  * 下層ページ（会社概要）のタイトル出現アニメーション
  */
-const initializeCompanyAnimation = () => {
+const initializePageAnimation = () => {
   const en = document.querySelectorAll(".js-page-title-en");
   const jp = document.querySelector(".js-page-title-jp");
 
@@ -516,7 +516,53 @@ const initializeCompanyAnimation = () => {
   });
 };
 
-initializeCompanyAnimation();
+initializePageAnimation();
+
+/**
+ * 事業紹介ページのKVアニメーション
+ */
+const initializePageAnimation02 = () => {
+  const title = document.querySelector(".js-page-title-row");
+  const subTitle = document.querySelector(".js-page-title-sub");
+  const image = document.querySelector(".js-page-kv-image");
+
+  if (!title || !subTitle || !image) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const mm = gsap.matchMedia();
+  const tl = gsap.timeline();
+
+  mm.add(
+    {
+      isDesktop: "(min-width: 768px)",
+      isMobile: "(max-width: 767px)",
+    },
+    (context) => {
+      let { isDesktop } = context.conditions;
+
+      tl.from([title, subTitle], {
+        y: isDesktop ? 20 : 15,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.2,
+      }).from(
+        image,
+        {
+          y: isDesktop ? 0 : 20,
+          x: isDesktop ? 30 : 0,
+          opacity: 0,
+          scale: 1.05,
+          duration: 1.5,
+          ease: "power2.out",
+        },
+        "-=0.8"
+      );
+    }
+  );
+};
+initializePageAnimation02();
 
 /**
  * 事業紹介ページ サイドメニューのスクロール連動
@@ -528,7 +574,7 @@ const initializeBusinessMenuScroll = () => {
   if (menuLinks.length === 0 || sections.length === 0) return;
 
   const options = {
-    rootMargin: "-50% 0px",
+    rootMargin: "-25% 0px -70% 0px",
     threshold: 0,
   };
 
