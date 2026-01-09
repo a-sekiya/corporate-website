@@ -500,7 +500,7 @@ const initializeTopAnimateOthers = () => {
 initializeTopAnimateOthers();
 
 /**
- * 下層ページ（会社概要）のタイトル出現アニメーション
+ * 下層ページのタイトルアニメーション
  */
 const initializePageAnimation = () => {
   const en = document.querySelectorAll(".js-page-title-en");
@@ -523,7 +523,7 @@ const initializePageAnimation = () => {
 initializePageAnimation();
 
 /**
- * 事業紹介ページのKVアニメーション
+ * 下層ページのタイトルと画像のアニメーション
  */
 const initializePageAnimation02 = () => {
   const title = document.querySelector(".js-page-title-row");
@@ -643,3 +643,21 @@ const initializeProductImage = () => {
 };
 
 initializeProductImage();
+
+/**
+ * お知らせページのアーカイブ一覧
+ */
+const initializeNewsArchives = () => {
+  const menuLinks = document.querySelectorAll(".js-news-menu-item-link");
+
+  if (!menuLinks) return;
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      menuLinks.forEach((item) => item.classList.remove("is-active"));
+
+      this.classList.add("is-active");
+    });
+  });
+};
+initializeNewsArchives();
