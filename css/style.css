@@ -24,6 +24,7 @@ global > color
   --border-table: #ebebeb;
   --border-access: #ebebeb;
   --border-product-item: #dcdcdc;
+  --color-font-link: #497fdf;
 }
 
 /*!
@@ -284,6 +285,10 @@ utility > utility
   }
 }
 
+.u-mt {
+  margin-top: 80rem !important;
+}
+
 .u-block {
   display: block !important;
 }
@@ -304,10 +309,6 @@ utility > utility
   .u-pc-block {
     display: block !important;
   }
-}
-
-.u-mt-narrow {
-  margin-top: 80rem !important;
 }
 
 /*!
@@ -448,6 +449,18 @@ component > title
   }
 }
 
+.c-page-title-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.c-page-title-date {
+  font-family: var(--font-family-en);
+  font-size: 17rem;
+  line-height: 1.16;
+}
+
 /*!
 component > button
 ------------------------------
@@ -469,7 +482,7 @@ component > button
   display: inline-flex;
   gap: 43rem;
   align-items: center;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition: 0.3s ease;
   font-size: 16rem;
   line-height: 1.15;
   font-family: var(--font-family-en);
@@ -514,6 +527,63 @@ component > button
     background-color: var(--bg-white);
     color: var(--bg-primary);
     outline: 1px solid var(--bg-primary);
+  }
+}
+
+.c-button-nav {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family-en);
+  font-size: 16rem;
+  line-height: 1.16;
+}
+
+.c-button-nav-link {
+  background-color: var(--bg-light-grey);
+  padding: 16rem 24rem;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 46rem;
+  transition: 0.3s ease;
+}
+
+.c-button-nav-link--prev::before {
+  content: "";
+  width: 12rem;
+  height: 11rem;
+  background-image: url("../img/common/button-arrow-blue.svg");
+  transform: scaleX(-1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease;
+}
+@media screen and (min-width: 768px) and (any-hover: hover) {
+  .c-button-nav-link--prev:hover {
+    opacity: 0.8;
+  }
+  .c-button-nav-link--prev:hover::before {
+    transform: scaleX(-1) translateX(4rem);
+  }
+}
+
+.c-button-nav-link--next::after {
+  content: "";
+  width: 12rem;
+  height: 11rem;
+  background-image: url("../img/common/button-arrow-blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s ease;
+}
+@media screen and (min-width: 768px) and (any-hover: hover) {
+  .c-button-nav-link--next:hover {
+    opacity: 0.8;
+  }
+  .c-button-nav-link--next:hover::after {
+    transform: translateX(4rem);
   }
 }
 
@@ -2798,6 +2868,101 @@ page > news > news-list
 @media screen and (min-width: 768px) {
   .news-main {
     order: 2;
+  }
+}
+
+/*!
+page > news > news-detail
+------------------------------
+*/
+.news-detail-wrapper {
+  margin-block: 80rem;
+}
+@media screen and (min-width: 768px) {
+  .news-detail-wrapper {
+    margin-block: 144.5rem 120rem;
+  }
+}
+
+.news-detail-article {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+}
+
+.news-detail-title-level2 {
+  font-size: 20rem;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+@media screen and (min-width: 768px) {
+  .news-detail-title-level2 {
+    font-size: 24rem;
+    line-height: 1.45;
+  }
+}
+
+.news-detail-title-level3 {
+  font-size: 18rem;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+}
+@media screen and (min-width: 768px) {
+  .news-detail-title-level3 {
+    font-size: 20rem;
+  }
+}
+
+.news-detail-text-bold {
+  font-weight: bold;
+}
+
+.news-detail-list-disc {
+  list-style-type: disc;
+  padding-left: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.news-detail-item-disc {
+  font-weight: bold;
+}
+.news-detail-item-disc::marker {
+  color: var(--text-primary);
+}
+
+.news-detail-list-decimal {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.news-detail-item-decimal {
+  font-weight: bold;
+  counter-increment: news-list;
+  font-size: 16rem;
+  display: flex;
+  gap: 8rem;
+  align-items: baseline;
+}
+.news-detail-item-decimal::before {
+  content: counter(news-list, decimal-leading-zero) ".";
+  color: var(--text-primary);
+  font-family: var(--font-family-en);
+  font-weight: normal;
+  font-size: 20rem;
+  line-height: 1.15;
+}
+
+.news-detail-link {
+  text-decoration: underline;
+  color: var(--color-font-link);
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .news-detail-link:hover {
+    opacity: 0.7;
   }
 }
 /*# sourceMappingURL=style.css.map */
