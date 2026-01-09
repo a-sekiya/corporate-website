@@ -25,6 +25,10 @@ utility > utility
   }
 }
 
+.u-mt {
+  margin-top: 80rem !important;
+}
+
 .u-block {
   display: block !important;
 }
@@ -43,8 +47,4 @@ utility > utility
   @include g.mq() {
     display: block !important;
   }
-}
-
-.u-mt-narrow {
-  margin-top: 80rem !important;
 }

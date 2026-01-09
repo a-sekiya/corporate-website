@@ -89,6 +89,7 @@ component > title
   }
 }
 
+// 日本語と英語が横並び
 .c-page-title-row {
   display: flex;
   flex-direction: row;
@@ -127,4 +128,16 @@ component > title
     font-size: 44rem;
     margin-top: 16rem;
   }
+}
+
+.c-page-title-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.c-page-title-date {
+  font-family: var(--font-family-en);
+  font-size: 17rem;
+  line-height: 1.16;
 }

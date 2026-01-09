@@ -21,7 +21,7 @@ component > button
   display: inline-flex;
   gap: 43rem;
   align-items: center;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition: 0.3s ease;
   font-size: 16rem;
   line-height: 1.15;
   font-family: var(--font-family-en);
@@ -71,6 +71,74 @@ component > button
       background-color: var(--bg-white);
       color: var(--bg-primary);
       outline: 1px solid var(--bg-primary);
+    }
+  }
+}
+
+// 「次の記事へ」「前の記事へ」ボタン
+.c-button-nav {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family-en);
+  font-size: 16rem;
+  line-height: 1.16;
+}
+
+.c-button-nav-link {
+  background-color: var(--bg-light-grey);
+  padding: 16rem 24rem;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 46rem;
+  transition: 0.3s ease;
+}
+
+.c-button-nav-link--prev {
+  &::before {
+    content: "";
+    width: 12rem;
+    height: 11rem;
+    background-image: url("../img/common/button-arrow-blue.svg");
+    transform: scaleX(-1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        &::before {
+          transform: scaleX(-1) translateX(4rem);
+        }
+      }
+    }
+  }
+}
+
+.c-button-nav-link--next {
+  &::after {
+    content: "";
+    width: 12rem;
+    height: 11rem;
+    background-image: url("../img/common/button-arrow-blue.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s ease;
+  }
+
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        &::after {
+          transform: translateX(4rem);
+        }
+      }
     }
   }
 }
