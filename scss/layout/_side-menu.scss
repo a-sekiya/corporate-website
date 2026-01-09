@@ -1,0 +1,40 @@
+@use "../global" as g;
+
+/*!
+layout > side-menu
+------------------------------
+*/
+
+.l-side-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80rem;
+
+  @include g.mq() {
+    display: grid;
+    grid-template-columns: 240rem 1fr;
+  }
+}
+
+.l-side-menu--business {
+  @include g.mq() {
+    gap: 155rem;
+  }
+}
+
+.l-side-menu-inner {
+  @include g.mq() {
+    position: sticky;
+    top: 40rem;
+    align-self: start;
+    height: fit-content;
+  }
+}
+
+.l-side-menu-inner--business {
+  display: none;
+
+  @include g.mq() {
+    display: block;
+  }
+}

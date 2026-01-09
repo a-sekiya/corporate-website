@@ -53,3 +53,24 @@ component > button
 .c-button-link--top {
   gap: 53rem;
 }
+
+// 送信用
+.c-button-submit {
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+  font-size: 18rem;
+  line-height: 1.44;
+  letter-spacing: 0.05em;
+  padding: 24rem 122.5rem;
+  border-radius: 100vh;
+  display: inline-block;
+  transition: 0.3s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--bg-white);
+      color: var(--bg-primary);
+      outline: 1px solid var(--bg-primary);
+    }
+  }
+}

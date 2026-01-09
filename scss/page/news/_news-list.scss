@@ -1,0 +1,15 @@
+@use "../../global" as g;
+
+/*!
+page > news > news-list
+------------------------------
+*/
+.news-side-menu {
+  order: 2;
+}
+
+.news-main {
+  @include g.mq() {
+    order: 2;
+  }
+}

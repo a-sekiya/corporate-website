@@ -498,6 +498,25 @@ component > button
   gap: 53rem;
 }
 
+.c-button-submit {
+  background-color: var(--bg-primary);
+  color: var(--text-white);
+  font-size: 18rem;
+  line-height: 1.44;
+  letter-spacing: 0.05em;
+  padding: 24rem 122.5rem;
+  border-radius: 100vh;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+@media (any-hover: hover) {
+  .c-button-submit:hover {
+    background-color: var(--bg-white);
+    color: var(--bg-primary);
+    outline: 1px solid var(--bg-primary);
+  }
+}
+
 /*!
 component > contact
 ------------------------------
@@ -879,6 +898,54 @@ component > post-product
     line-height: 1.45;
     letter-spacing: 0.05em;
   }
+}
+
+/*!
+component > side-menu
+------------------------------
+*/
+.c-side-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+  margin-top: 32rem;
+  font-size: 16rem;
+  line-height: 1.5;
+}
+
+.c-side-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.c-side-menu-item::after {
+  content: "";
+  display: block;
+  width: 9rem;
+  height: 9rem;
+  background-image: url("../img/common/button-arrow-blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.c-side-menu-item-link {
+  opacity: 0.5;
+  transition: color 0.3s;
+}
+.c-side-menu-item-link.is-active {
+  opacity: 1;
+}
+@media (any-hover: hover) {
+  .c-side-menu-item-link:hover {
+    opacity: 1;
+  }
+}
+
+.c-side-menu-item-link-en {
+  font-family: var(--font-family-en);
+  font-size: 19rem;
+  line-height: 1.15;
 }
 
 /*!
@@ -1535,6 +1602,49 @@ layout > footer
 }
 
 /*!
+layout > side-menu
+------------------------------
+*/
+.l-side-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80rem;
+}
+@media screen and (min-width: 768px) {
+  .l-side-menu {
+    display: grid;
+    grid-template-columns: 240rem 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .l-side-menu--business {
+    gap: 155rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .l-side-menu-inner {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 40rem;
+    align-self: start;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+.l-side-menu-inner--business {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .l-side-menu-inner--business {
+    display: block;
+  }
+}
+
+/*!
 page > top > top-kv
 ------------------------------
 */
@@ -2096,7 +2206,7 @@ page > top > top-others
 }
 
 /*!
-page > business > business-contents
+page > business > business-detail
 ------------------------------
 */
 .business-wrapper {
@@ -2104,66 +2214,7 @@ page > business > business-contents
 }
 @media screen and (min-width: 768px) {
   .business-wrapper {
-    display: grid;
-    grid-template-columns: 240rem 1fr;
     margin-block: 149.5rem 201rem;
-    gap: 155rem;
-  }
-}
-
-.business-sidebar {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .business-sidebar {
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 40rem;
-    align-self: start;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .business-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16rem;
-    margin-top: 32rem;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .business-menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .business-menu-item::after {
-    content: "";
-    display: block;
-    width: 9rem;
-    height: 9rem;
-    background-image: url("../img/common/button-arrow-blue.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .business-menu-item-link {
-    color: var(--text-base);
-    font-size: 16rem;
-    line-height: 1.5;
-    opacity: 0.5;
-    transition: color 0.3s;
-  }
-  .business-menu-item-link.is-active {
-    opacity: 1;
   }
 }
 
@@ -2676,25 +2727,6 @@ page > contact > contact
   }
 }
 
-.contact-button-submit {
-  background-color: var(--bg-primary);
-  color: var(--text-white);
-  font-size: 18rem;
-  line-height: 1.44;
-  letter-spacing: 0.05em;
-  padding: 24rem 122.5rem;
-  border-radius: 100vh;
-  display: inline-block;
-  transition: 0.3s ease;
-}
-@media (any-hover: hover) {
-  .contact-button-submit:hover {
-    background-color: var(--bg-white);
-    color: var(--bg-primary);
-    outline: 1px solid var(--bg-primary);
-  }
-}
-
 /*!
 page > privacy > privacy
 ------------------------------
@@ -2753,5 +2785,19 @@ page > privacy > privacy
 }
 .privacy-link:hover {
   opacity: 0.7;
+}
+
+/*!
+page > news > news-list
+------------------------------
+*/
+.news-side-menu {
+  order: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .news-main {
+    order: 2;
+  }
 }
 /*# sourceMappingURL=style.css.map */
