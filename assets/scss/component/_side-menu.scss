@@ -1,0 +1,54 @@
+@use "../global" as g;
+
+/*!
+component > side-menu
+------------------------------
+*/
+
+.c-side-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+  margin-top: 32rem;
+  font-size: 16rem;
+  line-height: 1.5;
+}
+
+.c-side-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 9rem;
+    height: 9rem;
+    background-image: url("/assets/img/common/button-arrow-blue.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.c-side-menu-item-link {
+  opacity: 0.5;
+  transition: color 0.3s;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.c-side-menu-item-link-en {
+  font-family: var(--font-family-en);
+  font-size: 19rem;
+  line-height: 1.15;
+  font-weight: 400;
+}

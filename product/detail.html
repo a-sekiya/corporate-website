@@ -30,15 +30,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
 
     <!-- css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/vendor/splide.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/assets/js/vendor/splide-extension-auto-scroll.min.js" defer></script>
+    <script src="/assets/js/vendor/splide.min.js" defer></script>
+    <script src="/assets/js/vendor/gsap.min.js" defer></script>
+    <script src="/assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="/assets/js/main.js"></script>
 
     <meta name="robots" content="noindex,nofollow" />
   </head>
@@ -47,7 +47,7 @@
       <header class="l-header l-header--page l-container">
         <div class="l-header-logo">
           <a href="/">
-            <img src="/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
+            <img src="/assets/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
           </a>
         </div>
 
@@ -65,7 +65,7 @@
             <div class="l-header-menu-top">
               <div class="l-header-logo">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
                 </a>
               </div>
               <button type="button" class="l-header-menu-close-button js-header-menu-close-button">
@@ -141,14 +141,14 @@
               <div class="c-page-kv-title">
                 <div class="c-page-title-row js-page-title-row">
                   <span class="c-page-title-row-en">PRODUCT</span>
-                  <h1 class="c-page-title-row-jp">製品案内</h1>
+                  <p class="c-page-title-row-jp">製品案内</p>
                 </div>
-                <p class="c-page-title-sub js-page-title-sub">タフロック&reg; 耐振動ボルト</p>
+                <h1 class="c-page-title-sub js-page-title-sub">タフロック&reg; 耐振動ボルト</h1>
               </div>
 
               <picture class="c-page-kv-image c-page-kv-image--post js-page-kv-image">
-                <source media="(max-width: 767px)" srcset="/img/product/detail/product-detail-kv-sp.jpg" />
-                <img src="/img/common/product/product-image.jpg" width="484" height="323" alt="製品案内：タフロックⓇ 耐振動ボルト" decoding="async" />
+                <source media="(max-width: 767px)" srcset="/assets/img/product/detail/product-detail-kv-sp.jpg" />
+                <img src="/assets/img/common/product/product-image.jpg" width="484" height="323" alt="製品案内：タフロックⓇ 耐振動ボルト" decoding="async" />
               </picture>
             </div>
           </div>
@@ -171,13 +171,13 @@
               <ul class="product-detail-main-slider splide__list">
                 <li class="splide__slide">
                   <picture>
-                    <source media="(max-width: 767px)" srcset="/img/product/detail/product-detail-image-sp.jpg" />
-                    <img src="/img/product/detail/product-detail-image-pc.jpg" width="1000" height="500" alt="タフロックⓇ 耐振動ボルトの外観（全体像）" decoding="async" />
+                    <source media="(max-width: 767px)" srcset="/assets/img/product/detail/product-detail-image-sp.jpg" />
+                    <img src="/assets/img/product/detail/product-detail-image-pc.jpg" width="1000" height="500" alt="タフロックⓇ 耐振動ボルトの外観（全体像）" decoding="async" />
                   </picture>
                 </li>
-                <li class="splide__slide"><img src="/img/common/product/product-image02.jpg" width="1000" height="500" alt="エコファステンⓇ 軽量化ネジの外観（全体像）" decoding="async" /></li>
-                <li class="splide__slide"><img src="/img/common/product/product-image05.jpg" width="1000" height="500" alt="サンダーロックⓇ 高耐食ボルトの外観（全体像）" decoding="async" /></li>
-                <li class="splide__slide"><img src="/img/common/product/product-image04.jpg" width="1000" height="500" alt="サンダーロックⓇ 高耐食ボルトの外観（全体像）" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image02.jpg" width="1000" height="500" alt="エコファステンⓇ 軽量化ネジの外観（全体像）" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image05.jpg" width="1000" height="500" alt="サンダーロックⓇ 高耐食ボルトの外観（全体像）" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image04.jpg" width="1000" height="500" alt="サンダーロックⓇ 高耐食ボルトの外観（全体像）" decoding="async" /></li>
               </ul>
             </div>
           </div>
@@ -185,10 +185,10 @@
           <div class="js-product-detail-thumbnail-slider splide">
             <div class="splide__track">
               <ul class="product-detail-thumbnail-slider splide__list">
-                <li class="splide__slide"><img src="/img/product/detail/product-detail-image-pc.jpg" width="104" height="104" alt="製品画像1枚目" decoding="async" /></li>
-                <li class="splide__slide"><img src="/img/common/product/product-image02.jpg" width="104" height="104" alt="製品画像2枚目" decoding="async" /></li>
-                <li class="splide__slide"><img src="/img/common/product/product-image05.jpg" width="104" height="104" alt="製品画像3枚目" decoding="async" /></li>
-                <li class="splide__slide"><img src="/img/common/product/product-image04.jpg" width="104" height="104" alt="製品画像4枚目" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/product/detail/product-detail-image-pc.jpg" width="104" height="104" alt="製品画像1枚目" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image02.jpg" width="104" height="104" alt="製品画像2枚目" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image05.jpg" width="104" height="104" alt="製品画像3枚目" decoding="async" /></li>
+                <li class="splide__slide"><img src="/assets/img/common/product/product-image04.jpg" width="104" height="104" alt="製品画像4枚目" decoding="async" /></li>
               </ul>
             </div>
           </div>
@@ -230,10 +230,10 @@
           </table>
         </div>
 
-        <!-- contact -->
-        <section class="c-contact">
-          <div class="c-contact-inner">
-            <div class="c-contact-bg-slider splide js-contact-bg-splide" aria-hidden="true">
+        <!-- cta -->
+        <section class="c-cta u-mt">
+          <div class="c-cta-inner">
+            <div class="c-cta-bg-slider splide js-cta-bg-splide" aria-hidden="true">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">CONTACT US</li>
@@ -242,29 +242,29 @@
               </div>
             </div>
 
-            <div class="c-contact-circle">
-              <a href="/contact/" class="c-contact-link">
-                <div class="c-title c-title--contact">
-                  <span class="c-title-en c-title-en--white c-title-en--contact">CONTACT</span>
+            <div class="c-cta-circle">
+              <a href="/contact/" class="c-cta-link">
+                <div class="c-title c-title--cat">
+                  <span class="c-title-en c-title-en--white c-title-en--cat">CONTACT</span>
                   <h2 class="c-title-jp c-title-jp--white">お問い合わせ</h2>
                 </div>
               </a>
             </div>
           </div>
         </section>
-        <!-- end contact -->
+        <!-- end cta -->
       </main>
 
       <footer class="l-footer-container">
         <div class="l-footer-wrapper">
           <button type="button" class="l-footer-button js-footer-button" aria-label="ページトップへ戻る">
-            <img src="/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
+            <img src="/assets/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
           </button>
           <div class="l-footer-inner l-container">
             <div class="l-footer-block">
               <address class="l-footer-info">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
                 </a>
                 <p class="l-footer-address">〒123-4567 東京都春日区青葉町2-11-7</p>
                 <p class="l-footer-tel">Tel.<a href="tel:0312345678" class="l-footer-tel-link">03-1234-5678</a></p>
