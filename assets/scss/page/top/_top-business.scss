@@ -1,0 +1,130 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-business
+------------------------------
+*/
+
+.top-business {
+  position: relative;
+}
+
+.top-business-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: -32rem;
+  @include g.mq() {
+    margin-top: 88rem;
+    display: grid;
+    grid-template-columns: 580rem 1fr;
+    gap: 56rem;
+  }
+}
+
+.top-business-image {
+  margin-bottom: 56rem;
+
+  @include g.mq() {
+    margin-bottom: 0;
+  }
+}
+
+.top-business-image img {
+  @include g.mq() {
+    aspect-ratio: 580 / 300;
+    object-fit: cover;
+    border-radius: 0 0 0 56rem;
+  }
+
+  @include g.mq() {
+    aspect-ratio: 580 / 600;
+  }
+}
+
+.top-business-text {
+  margin-block: 8rem 24rem;
+  font-size: 28rem;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+
+  @include g.mq() {
+    margin-block: 16rem 40rem;
+    font-size: 32rem;
+  }
+}
+
+.top-business-list {
+  margin-top: 47rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+  border-top: 1rem solid var(--sep-lightgrey);
+  border-bottom: 1rem solid var(--sep-lightgrey);
+  padding-top: 20rem;
+
+  @include g.mq() {
+    margin-top: 56rem;
+    gap: 24rem;
+    padding-top: 24rem;
+  }
+}
+
+.top-business-item {
+  border-bottom: 1rem solid var(--sep-lightgrey);
+  padding: 0 16rem 15rem 16rem;
+  font-size: 18rem;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+
+  @include g.mq() {
+    padding: 0 16rem 23rem 16rem;
+    font-size: 20rem;
+  }
+}
+
+.top-business-item-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16rem;
+  transition: transform 0.3s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 44rem;
+    height: 44rem;
+    background-image: url("/assets/img/common/arrow-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  @include g.mq() {
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.8;
+        &::after {
+          transform: translateX(4rem);
+        }
+      }
+    }
+  }
+}
+
+.top-business-background {
+  position: absolute;
+  bottom: -11%;
+  left: 22%;
+  width: 287rem;
+  height: 81rem;
+  z-index: var(--z-index-background);
+
+  @include g.mq() {
+    bottom: -50%;
+    left: 45%;
+    width: 785rem;
+    height: 278rem;
+  }
+}

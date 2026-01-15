@@ -1,0 +1,145 @@
+@use "../global" as g;
+
+/*!
+component > title
+------------------------------
+*/
+.c-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.c-title--row {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.c-title--cta {
+  @include g.mq() {
+    gap: 18rem;
+  }
+}
+
+.c-title-en {
+  font-size: 40rem;
+  line-height: 1.15;
+  font-family: var(--font-family-en);
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.c-title-en--small {
+  font-size: 20rem;
+}
+
+.c-title-en--white {
+  color: var(--text-white);
+}
+
+.c-title-en--cta {
+  font-size: 32rem;
+
+  @include g.mq() {
+    font-size: 40rem;
+  }
+}
+
+.c-title-jp {
+  line-height: 1.45;
+  color: var(--text-light-base);
+
+  @include g.mq() {
+    font-size: 15rem;
+  }
+}
+
+.c-title-jp--white {
+  color: var(--text-white);
+}
+
+.c-page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  @include g.mq() {
+    gap: 16rem;
+  }
+}
+
+// 下層ページKVタイトル
+.c-page-title-en {
+  font-size: 50rem;
+  line-height: 1.15;
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  color: var(--text-primary);
+
+  @include g.mq() {
+    font-size: 72rem;
+  }
+}
+
+.c-page-title-jp {
+  line-height: 1.45;
+  color: var(--text-base);
+
+  @include g.mq() {
+    font-size: 18rem;
+  }
+}
+
+// 日本語と英語が横並び（下層ページKVタイトル）
+.c-page-title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8rem;
+}
+
+.c-page-title-row-en {
+  font-size: 20rem;
+  line-height: 1.15;
+  font-family: var(--font-family-en);
+  font-weight: 400;
+  color: var(--text-primary);
+
+  @include g.mq() {
+    font-size: 24rem;
+  }
+}
+
+.c-page-title-row-jp {
+  line-height: 1.45;
+  color: var(--text-light-base);
+
+  @include g.mq() {
+    font-size: 18rem;
+  }
+}
+
+.c-page-title-sub {
+  font-size: 28rem;
+  line-height: 1.45;
+  letter-spacing: 0.05em;
+  margin-top: 12rem;
+  font-weight: 500;
+
+  @include g.mq() {
+    font-size: 44rem;
+    margin-top: 16rem;
+  }
+}
+
+.c-page-title-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.c-page-title-date {
+  font-family: var(--font-family-en);
+  font-size: 17rem;
+  line-height: 1.16;
+}

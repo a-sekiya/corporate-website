@@ -30,15 +30,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
 
     <!-- css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/vendor/splide.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/assets/js/vendor/splide-extension-auto-scroll.min.js" defer></script>
+    <script src="/assets/js/vendor/splide.min.js" defer></script>
+    <script src="/assets/js/vendor/gsap.min.js" defer></script>
+    <script src="/assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="/assets/js/main.js"></script>
 
     <meta name="robots" content="noindex,nofollow" />
   </head>
@@ -47,7 +47,7 @@
       <header class="l-header l-header--page l-container">
         <div class="l-header-logo">
           <a href="/">
-            <img src="/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
+            <img src="/assets/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
           </a>
         </div>
 
@@ -65,7 +65,7 @@
             <div class="l-header-menu-top">
               <div class="l-header-logo">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
                 </a>
               </div>
               <button type="button" class="l-header-menu-close-button js-header-menu-close-button">
@@ -156,16 +156,16 @@
         </nav>
         <!-- end breadcrumb -->
 
-        <section class="u-ptb l-container-s">
+        <div class="u-ptb l-container-s">
           <div class="message-wrapper">
             <div class="message-image">
               <picture>
-                <source media="(max-width: 767px)" srcset="/img/message/message-image-sp.png" />
-                <img src="/img/message/message-image-pc.png" width="400" height="533" alt="代表取締役社長 森下 健一郎" decoding="async" />
+                <source media="(max-width: 767px)" srcset="/assets/img/message/message-image-sp.png" />
+                <img src="/assets/img/message/message-image-pc.png" width="400" height="533" alt="代表取締役社長 森下 健一郎" decoding="async" />
               </picture>
             </div>
             <div class="message-content">
-              <h2 class="message-title"><span class="u-block">持続可能な未来へ、</span>エネルギーイノベーションの<span class="u-pc-block">先駆者として</span></h2>
+              <p class="message-title"><span class="u-block">持続可能な未来へ、</span>エネルギーイノベーションの<span class="u-pc-block">先駆者として</span></p>
               <div class="message-text">
                 <p>株式会社森下は、1995年の創業以来、「クリーンエネルギーで世界を変える」という理念のもと、再生可能エネルギーの普及と技術革新に邁進してまいりました。気候変動という人類共通の課題に直面する今、私たちの使命はこれまで以上に重要性を増しています。</p>
                 <p>株式会社森下は、これからも「エネルギーイノベーションの先駆者」として、持続可能な社会の実現に向けて全力を尽くしてまいります。皆様のご支援とご協力を心よりお願い申し上げます。</p>
@@ -176,12 +176,12 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <!-- contact -->
-        <section class="c-contact">
-          <div class="c-contact-inner">
-            <div class="c-contact-bg-slider splide js-contact-bg-splide" aria-hidden="true">
+        <!-- cta -->
+        <section class="c-cta u-mt">
+          <div class="c-cta-inner">
+            <div class="c-cta-bg-slider splide js-cta-bg-splide" aria-hidden="true">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">CONTACT US</li>
@@ -190,29 +190,29 @@
               </div>
             </div>
 
-            <div class="c-contact-circle">
-              <a href="/contact/" class="c-contact-link">
-                <div class="c-title c-title--contact">
-                  <span class="c-title-en c-title-en--white c-title-en--contact">CONTACT</span>
+            <div class="c-cta-circle">
+              <a href="/contact/" class="c-cta-link">
+                <div class="c-title c-title--cat">
+                  <span class="c-title-en c-title-en--white c-title-en--cat">CONTACT</span>
                   <h2 class="c-title-jp c-title-jp--white">お問い合わせ</h2>
                 </div>
               </a>
             </div>
           </div>
         </section>
-        <!-- end contact -->
+        <!-- end cta -->
       </main>
 
       <footer class="l-footer-container">
         <div class="l-footer-wrapper">
           <button type="button" class="l-footer-button js-footer-button" aria-label="ページトップへ戻る">
-            <img src="/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
+            <img src="/assets/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
           </button>
           <div class="l-footer-inner l-container">
             <div class="l-footer-block">
               <address class="l-footer-info">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
                 </a>
                 <p class="l-footer-address">〒123-4567 東京都春日区青葉町2-11-7</p>
                 <p class="l-footer-tel">Tel.<a href="tel:0312345678" class="l-footer-tel-link">03-1234-5678</a></p>

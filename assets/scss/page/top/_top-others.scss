@@ -1,0 +1,81 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-others
+------------------------------
+*/
+
+.top-others-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32rem;
+
+  @include g.mq() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 46rem;
+  }
+}
+
+.top-others-item {
+  border-bottom: 1rem solid var(--sep-lightgrey);
+  padding: 0 16rem 31rem 16rem;
+
+  @include g.mq() {
+    border-right: 1rem solid var(--sep-lightgrey);
+    border-bottom: none;
+    padding: 16rem 46rem 16rem 0;
+  }
+}
+
+.top-others-item--access {
+  border: none;
+  padding-bottom: 0;
+
+  @include g.mq() {
+    padding-bottom: 16rem;
+  }
+}
+
+.top-others-link {
+  display: flex;
+  flex-direction: column;
+  gap: 16rem;
+  transition: transform 0.3s ease;
+
+  @include g.mq() {
+    gap: 32rem;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+      .top-others-button::after {
+        transform: translateX(4rem);
+      }
+    }
+  }
+}
+
+.top-others-button {
+  display: inline-block;
+  margin-left: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40rem;
+    height: 40rem;
+    background-image: url("/assets/img/common/arrow-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  @include g.mq() {
+    &::after {
+      width: 44rem;
+      height: 44rem;
+    }
+  }
+}

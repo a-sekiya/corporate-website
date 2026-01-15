@@ -30,15 +30,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
 
     <!-- css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/vendor/splide.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/assets/js/vendor/splide-extension-auto-scroll.min.js" defer></script>
+    <script src="/assets/js/vendor/splide.min.js" defer></script>
+    <script src="/assets/js/vendor/gsap.min.js" defer></script>
+    <script src="/assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script type="module" src="/assets/js/main.js"></script>
 
     <meta name="robots" content="noindex,nofollow" />
   </head>
@@ -47,7 +47,7 @@
       <header class="l-header l-header--page l-container">
         <div class="l-header-logo">
           <a href="/">
-            <img src="/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
+            <img src="/assets/img/layout/header/header-logo-black.svg" width="247" height="74" alt="森下株式会社" decoding="sync" />
           </a>
         </div>
 
@@ -65,7 +65,7 @@
             <div class="l-header-menu-top">
               <div class="l-header-logo">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" />
                 </a>
               </div>
               <button type="button" class="l-header-menu-close-button js-header-menu-close-button">
@@ -133,7 +133,7 @@
         </dialog>
       </header>
 
-      <main class="l-page-main">
+      <div class="l-page-main">
         <!-- page-kv -->
         <div class="c-page-kv c-page-kv--wide">
           <div class="l-container">
@@ -141,14 +141,14 @@
               <div class="c-page-kv-title">
                 <div class="c-page-title-row js-page-title-row">
                   <span class="c-page-title-row-en">BUSINESS</span>
-                  <h1 class="c-page-title-row-jp">事業紹介</h1>
+                  <p class="c-page-title-row-jp">事業紹介</p>
                 </div>
-                <p class="c-page-title-sub js-page-title-sub">特殊ボルトナットの設計・製造</p>
+                <h1 class="c-page-title-sub js-page-title-sub">特殊ボルトナットの設計・製造</h1>
               </div>
 
               <picture class="c-page-kv-image js-page-kv-image">
-                <source media="(max-width: 767px)" srcset="/img/business/business-kv-sp.png" />
-                <img src="/img/business/business-kv-pc.png" width="484" height="323" alt="事業紹介：特殊ボルトナットの設計・製造風景" decoding="async" />
+                <source media="(max-width: 767px)" srcset="/assets/img/business/business-kv-sp.png" />
+                <img src="/assets/img/business/business-kv-pc.png" width="484" height="323" alt="事業紹介：特殊ボルトナットの設計・製造風景" decoding="async" />
               </picture>
             </div>
           </div>
@@ -166,25 +166,27 @@
         <!-- end breadcrumb -->
 
         <div class="l-side-menu l-side-menu--business business-wrapper l-container">
-          <nav class="l-side-menu-inner l-side-menu-inner--business" aria-label="事業紹介ページ内メニュー">
+          <aside class="l-side-menu-inner l-side-menu-inner--business">
             <div class="c-title">
               <span class="c-title-en">MENU</span>
               <h2 class="c-title-jp">メニュー</h2>
             </div>
-            <ul class="c-side-menu-list">
-              <li class="c-side-menu-item">
-                <a href="#business-problem" class="c-side-menu-item-link js-business-menu-item-link">お客様の課題</a>
-              </li>
-              <li class="c-side-menu-item">
-                <a href="#business-feature" class="c-side-menu-item-link js-business-menu-item-link">特徴</a>
-              </li>
-              <li class="c-side-menu-item">
-                <a href="#business-flow" class="c-side-menu-item-link js-business-menu-item-link">納品までの流れ</a>
-              </li>
-            </ul>
-          </nav>
+            <nav aria-label="事業紹介ページ内メニュー">
+              <ul class="c-side-menu-list">
+                <li class="c-side-menu-item">
+                  <a href="#business-problem" class="c-side-menu-item-link js-business-menu-item-link">お客様の課題</a>
+                </li>
+                <li class="c-side-menu-item">
+                  <a href="#business-feature" class="c-side-menu-item-link js-business-menu-item-link">特徴</a>
+                </li>
+                <li class="c-side-menu-item">
+                  <a href="#business-flow" class="c-side-menu-item-link js-business-menu-item-link">納品までの流れ</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
 
-          <div class="business-main">
+          <main class="business-main">
             <section class="business-problem js-scroll-section" id="business-problem">
               <div class="business-main-title">
                 <span class="business-main-title-en">PROBLEM</span>
@@ -207,8 +209,8 @@
               <div class="business-feature-content">
                 <section class="business-feature-item">
                   <picture class="business-feature-image">
-                    <source media="(max-width: 767px)" srcset="/img/business/business-feature-image-sp.png" />
-                    <img src="/img/business/business-feature-image-pc.png" width="240" height="160" alt="スパナを用いて機械を精密に調整する技術者の手元" decoding="async" />
+                    <source media="(max-width: 767px)" srcset="/assets/img/business/business-feature-image-sp.png" />
+                    <img src="/assets/img/business/business-feature-image-pc.png" width="240" height="160" alt="スパナを用いて機械を精密に調整する技術者の手元" decoding="async" />
                   </picture>
                   <div class="business-feature-text">
                     <h3 class="business-feature-title">先進的な材料開発と加工技術</h3>
@@ -218,8 +220,8 @@
 
                 <section class="business-feature-item">
                   <picture class="business-feature-image">
-                    <source media="(max-width: 767px)" srcset="/img/business/business-feature-image02-sp.png" />
-                    <img src="/img/business/business-feature-image02-pc.png" width="240" height="160" alt="様々なサイズや形状の特殊ボルトナット用工具のラインナップ" decoding="async" />
+                    <source media="(max-width: 767px)" srcset="/assets/img/business/business-feature-image02-sp.png" />
+                    <img src="/assets/img/business/business-feature-image02-pc.png" width="240" height="160" alt="様々なサイズや形状の特殊ボルトナット用工具のラインナップ" decoding="async" />
                   </picture>
                   <div class="business-feature-text">
                     <h3 class="business-feature-title">カスタマイズ設計と少量多品種生産</h3>
@@ -229,8 +231,8 @@
 
                 <section class="business-feature-item">
                   <picture class="business-feature-image">
-                    <source media="(max-width: 767px)" srcset="/img/business/business-feature-image03-sp.png" />
-                    <img src="/img/business/business-feature-image03-pc.png" width="240" height="160" alt="スパナを用いて機械を精密に調整する技術者の手元" decoding="async" />
+                    <source media="(max-width: 767px)" srcset="/assets/img/business/business-feature-image03-sp.png" />
+                    <img src="/assets/img/business/business-feature-image03-pc.png" width="240" height="160" alt="スパナを用いて機械を精密に調整する技術者の手元" decoding="async" />
                   </picture>
                   <div class="business-feature-text">
                     <h3 class="business-feature-title">包括的な品質保証システム</h3>
@@ -249,7 +251,7 @@
               <ol class="business-flow-content">
                 <li class="business-flow-item">
                   <div class="business-flow-icon">
-                    <img src="/img/business/business-flow-icon.svg" width="134" height="134" alt="" decoding="async" />
+                    <img src="/assets/img/business/business-flow-icon.svg" width="134" height="134" alt="" decoding="async" />
                   </div>
                   <div class="business-flow-text">
                     <span class="business-flow-number">01.</span>
@@ -260,7 +262,7 @@
 
                 <li class="business-flow-item">
                   <div class="business-flow-icon">
-                    <img src="/img/business/business-flow-icon02.svg" width="134" height="134" alt="" decoding="async" />
+                    <img src="/assets/img/business/business-flow-icon02.svg" width="134" height="134" alt="" decoding="async" />
                   </div>
                   <div class="business-flow-text">
                     <span class="business-flow-number">02.</span>
@@ -271,7 +273,7 @@
 
                 <li class="business-flow-item">
                   <div class="business-flow-icon">
-                    <img src="/img/business/business-flow-icon03.svg" width="134" height="134" alt="" decoding="async" />
+                    <img src="/assets/img/business/business-flow-icon03.svg" width="134" height="134" alt="" decoding="async" />
                   </div>
                   <div class="business-flow-text">
                     <span class="business-flow-number">03.</span>
@@ -281,13 +283,13 @@
                 </li>
               </ol>
             </section>
-          </div>
+          </main>
         </div>
 
-        <!-- contact -->
-        <section class="c-contact">
-          <div class="c-contact-inner">
-            <div class="c-contact-bg-slider splide js-contact-bg-splide" aria-hidden="true">
+        <!-- cta -->
+        <section class="c-cta u-mt">
+          <div class="c-cta-inner">
+            <div class="c-cta-bg-slider splide js-cta-bg-splide" aria-hidden="true">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="splide__slide">CONTACT US</li>
@@ -296,29 +298,29 @@
               </div>
             </div>
 
-            <div class="c-contact-circle">
-              <a href="/contact/" class="c-contact-link">
-                <div class="c-title c-title--contact">
-                  <span class="c-title-en c-title-en--white c-title-en--contact">CONTACT</span>
+            <div class="c-cta-circle">
+              <a href="/contact/" class="c-cta-link">
+                <div class="c-title c-title--cat">
+                  <span class="c-title-en c-title-en--white c-title-en--cat">CONTACT</span>
                   <h2 class="c-title-jp c-title-jp--white">お問い合わせ</h2>
                 </div>
               </a>
             </div>
           </div>
         </section>
-        <!-- end contact -->
-      </main>
+        <!-- end cta -->
+      </div>
 
       <footer class="l-footer-container">
         <div class="l-footer-wrapper">
           <button type="button" class="l-footer-button js-footer-button" aria-label="ページトップへ戻る">
-            <img src="/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
+            <img src="/assets/img/layout/footer/footer-button.svg" width="80" height="80" alt="" decoding="async" />
           </button>
           <div class="l-footer-inner l-container">
             <div class="l-footer-block">
               <address class="l-footer-info">
                 <a href="/">
-                  <img src="/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
+                  <img src="/assets/img/common/logo-white.svg" width="247" height="74" alt="森下株式会社" decoding="async" class="l-footer-logo" />
                 </a>
                 <p class="l-footer-address">〒123-4567 東京都春日区青葉町2-11-7</p>
                 <p class="l-footer-tel">Tel.<a href="tel:0312345678" class="l-footer-tel-link">03-1234-5678</a></p>
