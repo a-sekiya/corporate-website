@@ -1051,7 +1051,6 @@ component > post-news
 }
 @media screen and (min-width: 768px) {
   .c-post-news-link {
-    display: inline-block;
     padding-block: 32rem 31rem;
   }
 }
