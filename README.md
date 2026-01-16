@@ -19,6 +19,12 @@ Hello Mentor の教材をもとに、Web 制作の基礎力向上を目的とし
 - 後から見返したときに分かりやすいよう、クラス名の付け方を意識しました
 - 将来的な保守性を考え、WordPress 化しやすいディレクトリ構造を意識しました
 
+## ブランチ構成について
+
+- main ブランチ：WordPress 化を想定したディレクトリ構成・パス指定
+- gh-pages ブランチ：GitHub Pages での公開を想定し、相対パスに調整
+
 ## URL
 
 https://github.com/a-sekiya/corporate-website.git
+https://a-sekiya.github.io/corporate-website/
