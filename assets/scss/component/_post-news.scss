@@ -29,7 +29,6 @@ component > post-news
   padding-block: 20rem 19rem;
 
   @include g.mq() {
-    display: block;
     padding-block: 32rem 31rem;
   }
 
